@@ -19,3 +19,11 @@ exports.addskills = function(req,res){
 exports.addSkill = function(req,res){
 		res.render('admin/addskills');
 	}
+
+
+exports.viewskills = function(req,res,next){
+	Skills.find(function(err,data){
+		if (err) {console.log(err)}
+		res.json(data)
+	})
+}

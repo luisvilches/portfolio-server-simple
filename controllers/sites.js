@@ -7,23 +7,30 @@ var site = require('.././models/sites');
 
 exports.addsites = function(req,res){
 
-		var data = new site({
+	var data = new site({
 
-			nombre: req.body.name,
-			url: req.body.url,
-			tecnologias: req.body.tecnologia,
-			urlImage: req.body.urlimg,
-			categoria: req.body.categoria
+		nombre: req.body.name,
+		url: req.body.url,
+		tecnologias: req.body.tecnologia,
+		urlImage: req.body.urlimg,
+		categoria: req.body.categoria
+	});
+
+	cloudinary.uploader.upload(req.file.path,
+		function(result){
+			data.urlImage = result.url;
+
+			data.save(function(err,data){
+			if (err) {console.log(err);
+			}else{console.log(data);}
+			res.render('admin/admin');
 		});
+	});
+}
 
-		cloudinary.uploader.upload(req.file.path,
-			function(result){
-				data.urlImage = result.url;
-
-				data.save(function(err,data){
-				if (err) {console.log(err);
-				}else{console.log(data);}
-				res.render('admin/admin');
-			});
-		});
-	}
+exports.viewsites = function(req,res,next){
+	site.find(function(err,data){
+		if (err) {console.log(err)}
+		res.json(data)
+	})
+}

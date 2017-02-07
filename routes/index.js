@@ -16,6 +16,8 @@ router.get('/admin/addskill', controllers.render.addskill)
 router.post('/admin/new/addsite',middleware_upload,controllers.sites.addsites)
 router.post('/admin/new/addskill', controllers.skill.addskills)
 router.get('/createsuperusuario',controllers.user.createUserInit)
+router.get('/skills', controllers.skill.viewskills)
+router.get('/sites', controllers.sites.viewsites)
 
 
 
