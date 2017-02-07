@@ -11,7 +11,7 @@ const cookieSession = require('cookie-session')
 require('events').EventEmitter.defaultMaxListeners = Infinity;
 
 let app = express()
-let port = process.env.PORT || 8000
+let port = process.env.PORT || 5000
 
 const uploader = multer({dest: "./uploads"});
 const router = require('./routes')
