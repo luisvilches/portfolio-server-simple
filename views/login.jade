@@ -1,0 +1,22 @@
+doctype
+html
+	head
+		title luisvilches
+		meta(charset='utf-8')
+		link(rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+	body
+		.container
+			.row
+				.col-md-12
+					br
+					br
+					h1.text-center ADMIN
+					br
+					br
+					.login
+						form(action='/login' method="post")
+							input(type='text' name="correo" placeholder="Ingresar correo" class="form-control")
+							br
+							input(type='password' name="password" placeholder="Ingresar correo" class="form-control")
+							br
+							input(type="submit" class="btn btn-primary form-control" value="Ingresar")

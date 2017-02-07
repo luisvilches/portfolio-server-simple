@@ -1,0 +1,18 @@
+doctype
+html
+	head
+		title luisvilches
+		meta(charset='utf-8')
+		link(rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+	body
+		.container
+			.row
+				.col-md-12
+					h2 Agregar nuevo skill
+					br
+					form(method="post" action="/admin/new/addskill")
+						input.form-control(type="text" name="skill" placeholder="Ingresar skill")
+						br
+						input.form-control(type="text" name="porcentaje" placeholder="Ingresar porcentaje")
+						br
+						input.form-control.btn.btn-info(type="submit" value="Ingresar")

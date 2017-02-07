@@ -1,0 +1,27 @@
+doctype
+html
+	head
+		title luisvilches
+		meta(charset='utf-8')
+		link(rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+	body
+		.container
+			.row
+				.col-md-12
+					h2 Agregar nuevo sitio
+					br
+					form(method="post" action="/admin/new/addsite" enctype="multipart/form-data")
+						input.form-control(type="text" name="name" placeholder="Ingresar nombre")
+						br
+						input.form-control(type="text" name="url" placeholder="Ingresar url")
+						br
+						input.form-control(type="text" name="tecnologia" placeholder="Ingresar tecnologias")
+						br
+						input.form-control(list="cat" name="categoria" placeholder="Ingresar categoria")
+						datalist(id="cat")
+							option(value="Front-End Developer")
+							option(value="Android Developer")
+						br
+						input.form-control(type="file" name="urlimg")
+						br
+						input.form-control.btn.btn-info(type="submit" value="Ingresar")
